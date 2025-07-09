@@ -3,49 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prompt Optimizer</title>
-  <style>
-    body {
-      background: #111;
-      color: #fff;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-    }
-    textarea {
-      width: 100%;
-      max-width: 500px;
-      height: 150px;
-      padding: 15px;
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 30px;
-      max-width: 500px;
-      white-space: pre-wrap;
-    }
-  </style>
+  <title>YourPromptGuy – AI Tools Hub</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Prompt Optimizer</h1>
-  <textarea id="userInput" placeholder="Paste your prompt here..."></textarea>
-  <button onclick="optimizePrompt()">Optimize Prompt</button>
-  <div id="result">✨ Your optimized prompts will appear here</div>
+  <header>
+    <h1>Every AI tool you need in one place</h1>
+    <p>Optimize prompts, generate captions, boost SEO — all in one clean interface.</p>
+  </header>
 
-  <script>
-    function optimizePrompt() {
-      const input = document.getElementById('userInput').value;
-      document.getElementById('result').innerText = `Processing: "${input}" \n\n(Real AI output coming soon...)`;
-    }
-  </script>
+  <main class="cards">
+    <a href="#" class="card">
+      <h2>🔍 Prompt Optimizer</h2>
+      <p>Enhance your AI prompts for better results with fewer tokens.</p>
+    </a>
+
+    <a href="#" class="card">
+      <h2>📸 Instagram Hashtag Generator</h2>
+      <p>Get viral-ready hashtags based on your caption or niche.</p>
+    </a>
+
+    <a href="#" class="card">
+      <h2>📝 AI Resume Fixer</h2>
+      <p>Fix grammar, make it ATS-friendly, and sound professional.</p>
+    </a>
+
+    <!-- Add more cards like this easily -->
+  </main>
 </body>
 </html>
