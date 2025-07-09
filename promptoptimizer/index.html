@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prompt Optimizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🔍 Prompt Optimizer</h1>
+    <p>Enter your raw prompt below and let AI refine it for clarity, tone, and effectiveness.</p>
 
+    <textarea id="inputPrompt" placeholder="Paste your raw prompt here..."></textarea>
+    <button onclick="optimizePrompt()">Optimize</button>
+
+    <div id="outputContainer" class="hidden">
+      <h2>✨ Optimized Prompt</h2>
+      <pre id="output"></pre>
+      <button onclick="copyOutput()">Copy</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
