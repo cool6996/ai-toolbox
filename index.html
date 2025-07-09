@@ -1,34 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YourPromptGuy – AI Tools Hub</title>
+  <title>AI Villa – Smart AI Tools</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --text: #222;
+      --card-bg: white;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #f5f5f5;
+      --card-bg: #1e1e1e;
+      --card-shadow: rgba(255, 255, 255, 0.05);
+    }
+
+    body {
+      font-family: sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: var(--card-bg);
+      box-shadow: 0 1px 5px var(--card-shadow);
+      position: relative;
+    }
+
+    .dark-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--text);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 3px 10px var(--card-shadow);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px var(--card-shadow);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Every AI tool you need in one place</h1>
-    <p>Optimize prompts, generate captions, boost SEO — all in one clean interface.</p>
+    <h1>🏡 AI Villa</h1>
+    <p>Your go-to hub for everyday AI tools.</p>
+    <button class="dark-toggle" onclick="toggleTheme()">🌓</button>
   </header>
 
   <main class="cards">
-    <a href="#" class="card">
+    <a href="promptoptimizer/" class="card">
       <h2>🔍 Prompt Optimizer</h2>
-      <p>Enhance your AI prompts for better results with fewer tokens.</p>
+      <p>Make your ChatGPT prompts clearer, stronger, and more effective.</p>
     </a>
 
-    <a href="#" class="card">
-      <h2>📸 Instagram Hashtag Generator</h2>
-      <p>Get viral-ready hashtags based on your caption or niche.</p>
+    <a href="seo/" class="card">
+      <h2>📈 SEO Generator</h2>
+      <p>Generate meta titles, descriptions, and keywords for your website.</p>
     </a>
-
-    <a href="#" class="card">
-      <h2>📝 AI Resume Fixer</h2>
-      <p>Fix grammar, make it ATS-friendly, and sound professional.</p>
-    </a>
-
-    <!-- Add more cards like this easily -->
   </main>
+
+  <script>
+    const root = document.documentElement;
+
+    function setTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }
+
+    function toggleTheme() {
+      const current = root.getAttribute("data-theme");
+      setTheme(current === "dark" ? "light" : "dark");
+    }
+
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved) {
+        setTheme(saved);
+      } else {
+        setTheme(prefersDark ? "dark" : "light");
+      }
+    })();
+  </script>
 </body>
 </html>
