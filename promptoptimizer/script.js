@@ -23,7 +23,13 @@ async function optimizePrompt() {
     });
 
     const data = await response.json();
-    output.textContent = data?.[0]?.generated_text || "❌ Could not optimize. Try again.";
+    if (Array.isArray(data) && data.length > 0 && data[0].generated_text) {
+  output.textContent = data[0].generated_text;
+} else if (data.generated_text) {
+  output.textContent = data.generated_text;
+} else {
+  output.textContent = "❌ Could not optimize. Try again.";
+}
   } catch (err) {
     output.textContent = "❌ Error connecting to free API.";
   }
