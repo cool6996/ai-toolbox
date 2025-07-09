@@ -1,4 +1,4 @@
-async function optimizePrompt() {
+function optimizePrompt() {
   const input = document.getElementById("inputPrompt").value.trim();
   const output = document.getElementById("output");
   const outputBox = document.getElementById("outputContainer");
@@ -11,26 +11,17 @@ async function optimizePrompt() {
   output.textContent = "⏳ Optimizing your prompt...";
   outputBox.classList.remove("hidden");
 
-  try {
-    const response = await fetch("https://api-inference.huggingface.co/models/google/flan-t5-small", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        inputs: "Improve this prompt: " + input
-      })
-    });
+  // Simulated delay
+  setTimeout(() => {
+    const examples = [
+      "Rewrite this to sound more professional and clear: " + input,
+      "Enhance this prompt to be more specific and effective: " + input,
+      "Make this prompt more creative and detailed: " + input
+    ];
 
-    const data = await response.json();
+    // Pick a random response type
+    const result = examples[Math.floor(Math.random() * examples.length)];
 
-    if (Array.isArray(data) && data[0]?.generated_text) {
-      output.textContent = data[0].generated_text;
-    } else {
-      output.textContent = "❌ Could not optimize. Try again.";
-    }
-
-  } catch (err) {
-    output.textContent = "❌ Error connecting to free API.";
-  }
+    output.textContent = result;
+  }, 1200);
 }
