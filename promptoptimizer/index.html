@@ -7,19 +7,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>🔍 Prompt Optimizer</h1>
-    <p>Enter your raw prompt below and let AI refine it for clarity, tone, and effectiveness.</p>
+  <div class="tool-container">
+    <h1>Prompt Optimizer</h1>
+    <p class="subtext">Refine your AI prompts for better, sharper responses.</p>
 
-    <textarea id="inputPrompt" placeholder="Paste your raw prompt here..."></textarea>
-    <button onclick="optimizePrompt()">Optimize</button>
+    <form id="prompt-form" class="tool-form">
+      <label for="promptInput">Enter your prompt:</label>
+      <textarea id="promptInput" rows="5" placeholder="e.g., Write a blog post about AI and its impact on education."></textarea>
+      <button type="submit">Optimize</button>
+    </form>
 
-    <div id="outputContainer" class="hidden">
-      <h2>✨ Optimized Prompt</h2>
-      <pre id="output"></pre>
-      <button onclick="copyOutput()">Copy</button>
-    </div>
-  </main>
+    <div id="prompt-output" class="output-box"></div>
+
+    <a href="/" class="back-home">← Back to AI Tools</a>
+  </div>
 
   <script src="script.js"></script>
 </body>
