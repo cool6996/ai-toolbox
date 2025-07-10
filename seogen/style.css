@@ -1,1 +1,79 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
 
+.tool-container {
+  max-width: 600px;
+  width: 90%;
+  margin-top: 40px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  text-align: center;
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.tool-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tool-form input {
+  padding: 10px 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.tool-form button {
+  padding: 10px;
+  font-size: 1em;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.tool-form button:hover {
+  background-color: #005dd1;
+}
+
+.output-box {
+  margin-top: 25px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #555;
+  font-size: 0.9em;
+}
