@@ -39,11 +39,12 @@ h1 {
   gap: 15px;
 }
 
-.tool-form input {
+.tool-form textarea {
   padding: 10px 12px;
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 8px;
+  resize: vertical;
 }
 
 .tool-form button {
